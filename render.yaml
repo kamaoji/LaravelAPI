@@ -1,0 +1,14 @@
+services:
+  - name: Laravel API
+    type: web
+    runtime: docker
+    repo: https://github.com/kamaoji/LaravelAPI
+    branch: main
+    envVars:
+      - key: APP_KEY
+        generateValue: true
+      - key: APP_ENV
+        value: production
+      - key: DB_CONNECTION
+        value: sqlite
+    startCommand: "php artisan serve --host=0.0.0.0 --port=10000"
